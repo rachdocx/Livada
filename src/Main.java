@@ -11,8 +11,8 @@ public class Main extends Application {
     private int nr = 0;
     @Override
     public void start(Stage primaryStage) {
-        Player gabi = new Player("Gabi", "M", 2, "Ie prost tare");
-        Player alina = new Player("Alibul", "F", 2, "Mai face canto");
+        Player gabi = new Player("Gabi", "M", 2, 3,"Ie prost tare");
+        Player alina = new Player("Alibul", "F", 2, 4,"Mai face canto");
         Button btnPlayer = new Button("Show Players");
         messageLabel = new Label("");
 
