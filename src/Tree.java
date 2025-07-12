@@ -10,5 +10,27 @@ public class Tree extends Plant{
         this.noOfFruitsPerCycle = noOfFruitsPerCycle;
     }
 
+    public String getFruitName() {
+        return fruitName;
+    }
 
+    public void setFruitName(String fruitName) {
+        this.fruitName = fruitName;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getNoOfFruitsPerCycle() {
+        return noOfFruitsPerCycle;
+    }
+
+    public void setNoOfFruitsPerCycle(int noOfFruitsPerCycle) {
+        this.noOfFruitsPerCycle = noOfFruitsPerCycle;
+    }
 }

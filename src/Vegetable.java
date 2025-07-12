@@ -5,4 +5,11 @@ public class Vegetable extends Plant{
         this.needsSupport = needsSupport;
     }
 
+    public boolean isNeedsSupport() {
+        return needsSupport;
+    }
+
+    public void setNeedsSupport(boolean needsSupport) {
+        this.needsSupport = needsSupport;
+    }
 }
