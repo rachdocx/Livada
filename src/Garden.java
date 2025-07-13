@@ -12,10 +12,18 @@ public class Garden {
         garden = new Plant[height][width];
     }
 
-
-    public void setGarden(Plant[][] garden) {
-        this.garden = garden;
+    public void setGarden(Plant obj, int i, int j) {
+        try{
+            if(i>this.height)
+                throw new IllegalArgumentException("Doesn't fit garden's height.");
+            if(j>this.width)
+                throw new IllegalArgumentException("Doesn't fit garden's width");
+            this.garden[i][j] = obj;
+        }catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
     }
+
 
     public int getWidth() {
         return width;
