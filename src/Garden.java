@@ -12,6 +12,10 @@ public class Garden {
         garden = new Plant[height][width];
     }
 
+    public Plant getGarden(int i, int j) {
+        return garden[i][j];
+    }
+
     public void setGarden(Plant obj, int i, int j) {
         try{
             if(i>this.height)
