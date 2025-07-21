@@ -6,6 +6,7 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.control.TextArea;
 
 import java.util.Optional;
 
