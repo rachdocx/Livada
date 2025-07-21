@@ -33,7 +33,9 @@ public class Main extends Application {
         Button btnAddPlayer = new Button("Add Player");
         Button btnBack = new Button("Back");
 
-        VBox root2 = new VBox(15, btnAddPlayer, btnBack);
+        Button btnSeePlayers = new Button("See Player");
+
+        VBox root2 = new VBox(15, btnAddPlayer, btnSeePlayers, btnBack);
         root2.setAlignment(Pos.CENTER);
         Scene scene2 = new Scene(root2, 400, 300);
 
@@ -63,6 +65,15 @@ public class Main extends Application {
             } else {
                 System.out.println("Player creation cancelled or invalid input.");
             }
+        });
+
+        btnSeePlayers.setOnAction(e -> {
+            String tempPlayer = new String();
+            for (Document doc : players.find()) {
+                tempPlayer = tempPlayer + doc.getString("name") + ": " + doc.getString("gender") + ", " + doc.getInteger("luck")  + ", "+ doc.getInteger("storage")  + ", "+ doc.getString("special");
+                tempPlayer += "\n";
+            }
+            System.out.println(tempPlayer.toString());
         });
 
         primaryStage.setTitle("JavaFX Example");
