@@ -36,6 +36,8 @@ public class Main extends Application {
 
         Button btnSeePlayers = new Button("See Player");
 
+
+
         VBox root2 = new VBox(15, btnAddPlayer, btnSeePlayers, btnBack);
         root2.setAlignment(Pos.CENTER);
         Scene scene2 = new Scene(root2, 400, 300);
@@ -69,12 +71,31 @@ public class Main extends Application {
         });
 
         btnSeePlayers.setOnAction(e -> {
+            Stage seePlayersStage = new Stage();
+            TextArea playerOutput = new TextArea();
+            playerOutput.setEditable(false);
+
             String tempPlayer = new String();
             for (Document doc : players.find()) {
                 tempPlayer = tempPlayer + doc.getString("name") + ": " + doc.getString("gender") + ", " + doc.getInteger("luck")  + ", "+ doc.getInteger("storage")  + ", "+ doc.getString("special");
                 tempPlayer += "\n";
             }
-            System.out.println(tempPlayer.toString());
+            //System.out.println(tempPlayer.toString());
+
+            playerOutput.setText(tempPlayer.toString());
+
+            Button btnClose = new Button("Back");
+            btnClose.setOnAction(ev -> seePlayersStage.close()); // închide doar fereastra
+
+            VBox layout = new VBox(10, playerOutput, btnClose);
+            layout.setAlignment(Pos.CENTER);
+            layout.setPrefSize(400, 300);
+
+            Scene scene = new Scene(layout);
+            seePlayersStage.setTitle("Players List");
+            seePlayersStage.setScene(scene);
+            seePlayersStage.show();
+
         });
 
         primaryStage.setTitle("JavaFX Example");
